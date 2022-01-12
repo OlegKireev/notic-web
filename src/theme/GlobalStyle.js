@@ -19,9 +19,14 @@ export default createGlobalStyle`
     background-color: #fff;
     line-height: 1.4;
   }
-  
+
   a:link,
   a:visited {
     color: #0077cc;
+  }
+
+  #root {
+    min-height: 100vh;
+    height: 1px;
   }
 `;
