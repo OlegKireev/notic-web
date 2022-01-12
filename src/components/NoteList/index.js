@@ -1,22 +1,15 @@
-import React, { Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React from 'react';
+import Preloader from '../Preloader';
+import Note from '../Note';
 
 const NoteList = ({ data, loading }) => (
-  <Fragment>
-    {loading
-      ? <span>Loading...</span>
-      : (
-        <ul>
-          {data.map((note) => (
-            <li key={note.id}>
-              <ReactMarkdown source={note.content} />
-            </li>
-          ))}
-        </ul>
-      )
-    }
-
-  </Fragment>
+  <Preloader loading={loading}>
+    <div>
+      {data.map((note) => (
+        <Note data={note} key={note.id} />
+      ))}
+    </div>
+  </Preloader>
 )
 
 export default NoteList;
