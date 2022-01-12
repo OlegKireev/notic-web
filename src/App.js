@@ -1,9 +1,12 @@
 import React from 'react';
+import Layout from './components/Layout';
 import Pages from './pages';
 
 const App = () => {
   return (
-    <Pages />
+    <Layout>
+      <Pages />
+    </Layout>
   )
 };
 
