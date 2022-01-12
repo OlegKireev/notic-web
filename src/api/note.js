@@ -13,6 +13,7 @@ export const GET_NOTE_FEED = gql`
 			author {
         id
         username
+        avatar
       }
     }
 	} 
