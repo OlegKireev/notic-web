@@ -20,6 +20,10 @@ export default createGlobalStyle`
     line-height: 1.4;
   }
 
+  a {
+    text-decoration: none;
+  }
+  
   a:link,
   a:visited {
     color: #0077cc;

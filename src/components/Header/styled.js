@@ -28,3 +28,8 @@ export const Logo = styled.img`
     height: 20px;
   }
 `;
+
+export const LogoLinkStyle = {
+  display: "flex",
+  alignItems: "center",
+}
