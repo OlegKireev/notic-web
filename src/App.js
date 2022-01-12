@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Pages from './pages';
+import GlobalStyle from './theme/GlobalStyle';
 
 const App = () => {
   return (
-    <Pages />
+    <Fragment>
+      <GlobalStyle />
+      <Pages />
+    </Fragment>
   )
 };
 
