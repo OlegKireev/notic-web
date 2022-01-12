@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 const Favorites = () => {
   useEffect(() => {
-    // Обновляем заголовок документа
     document.title = 'Favorites — Notedly';
   });
   return (
-    <div>
-      <h1>Notedly</h1>
+    <Fragment>
       <p>These are my favorites</p>
-    </div>
+    </Fragment>
   );
 };
 
