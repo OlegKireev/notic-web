@@ -9,7 +9,8 @@
     "deploy:src": "parcel build src/index.html --public-url ./",
     "deploy:final": "parcel build final/index.html --public-url ./",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "deploy": "git push && git push heroku master"
   },
   "repository": {
     "type": "git",
