@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <NoteList data={notes} />
+      <NoteList data={notes} loading={loading} />
     </Fragment>
   );
 };
