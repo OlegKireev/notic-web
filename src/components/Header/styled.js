@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { widths } from "@/constants/breakpoints";
+import { Link } from "react-router-dom";
 
 export const HeaderBar = styled.header`
   width: 100%;
@@ -29,7 +30,7 @@ export const Logo = styled.img`
   }
 `;
 
-export const LogoLinkStyle = {
-  display: "flex",
-  alignItems: "center",
-}
+export const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
