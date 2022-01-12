@@ -1,15 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import pathnames from '@/constants/pathnames';
+import { Nav, NavList } from './styled';
 
 const Navigation = () => (
-  <ul>
-    {pathnames.map(({ path, label, exact }) => (
-      <li key={path}>
-        <NavLink to={path} exact={exact}>{label}</NavLink>
-      </li>
-    ))}
-  </ul>
+  <nav>
+    <NavList>
+      {pathnames.map(({ path, label, exact }) => (
+        <li key={path}>
+          <NavLink to={path} exact={exact}>{label}</NavLink>
+        </li>
+      ))}
+    </NavList>
+  </nav>
 )
 
 export default Navigation;
