@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import pathnames from '@/constants/pathnames';
-import { Nav, NavList } from './styled';
+import { NavList } from './styled';
 
 const Navigation = () => (
   <nav>
