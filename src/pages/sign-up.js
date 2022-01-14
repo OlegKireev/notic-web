@@ -1,9 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import LoginForm from '@/components/LoginForm';
+import { SIGNUP_USER } from '@/api/auth';
+import { useMutation } from '@apollo/client';
 
 const signUpControls = {
-  name: {
-    id: 'name',
+  username: {
+    id: 'username',
     label: 'Username:',
     placeholder: 'jonh89',
     required: true,
@@ -33,6 +35,10 @@ const createFormEmptyState = (controls) => {
 const SignUp = () => {
   const [formData, setFormData] = useState(createFormEmptyState(signUpControls));
 
+  const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
+    onCompleted: (data) => console.log(data.signUp)
+  });
+
   useEffect(() => {
     document.title = 'Sign Up — Notedly';
   }, []);
@@ -45,7 +51,11 @@ const SignUp = () => {
   }
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    signUp({
+      variables: {
+        ...formData,
+      }
+    })
   };
 
   return (
