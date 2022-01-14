@@ -4,42 +4,29 @@ import { Wrapper, Input } from './styled';
 
 const LoginForm = ({
   data,
+  controls,
   onInputsChange,
   onSubmit,
 }) => {
   return (
     <Wrapper>
       <form onSubmit={onSubmit}>
-        <Input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="username"
-          required
-          label="Username:"
-          value={data.username}
-          onChange={onInputsChange}
-        />
-        <Input
-          type="text"
-          id="email"
-          name="email"
-          placeholder="email"
-          required
-          label="Email:"
-          value={data.email}
-          onChange={onInputsChange}
-        />
-        <Input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="password"
-          required
-          label="Password:"
-          value={data.password}
-          onChange={onInputsChange}
-        />
+        {Object.keys(controls).map((key) => {
+          const {id, type, label, placeholder, required} = controls[key];
+          return (
+            <Input
+              key={id}
+              type={type}
+              id={id}
+              name={id}
+              placeholder={placeholder}
+              required={required}
+              label={label}
+              value={data[id]}
+              onChange={onInputsChange}
+            />
+          )
+        })}
         <Button type='submit'>Sign up</Button>
       </form>
     </Wrapper>
