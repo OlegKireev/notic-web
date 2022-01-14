@@ -6,16 +6,19 @@ const Button = styled.button`
   border: 0;
   border-radius: .375em;
   cursor: pointer;
-  color: #ffffff;
-  background-color: #0077cc;
+  color: ${({kind}) => kind === 'text' ? '#0077cc' : '#ffffff'};
+  background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0077cc'};
   transition: background-color .1s ease;
 
   :hover {
-    background-color: #0088dd;
+    background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0088dd'};
+    color: ${({kind}) => kind === 'text' ? '#0088dd' : 'ffffff'};
+    text-decoration: ${({kind}) => kind === 'text' ? 'underline' : 'none'};
   }
 
   :active {
-    background-color: #005fa3;
+    background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#005fa3'};
+    color: ${({kind}) => kind === 'text' ? '#005fa3' : 'ffffff'};
   }
 `;
 
