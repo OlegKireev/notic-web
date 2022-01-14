@@ -29,4 +29,6 @@ const apolloClient = new ApolloClient({
   connectToDevTools: true,
 })
 
+// Записываем данные кэша после его сброса
+apolloClient.onResetStore(() => cache.writeData({ data }));
 export default apolloClient;
