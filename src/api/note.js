@@ -18,4 +18,20 @@ export const GET_NOTE_FEED = gql`
     }
 	} 
 }
-`
+`;
+
+export const GET_NOTE = gql`
+  query note($id: ID!) {
+    note(id: $id) {
+      id
+      createdAt
+      content
+      favoriteCount
+      author {
+        username
+        id
+        avatar
+      }
+    }
+  }
+`;
