@@ -12,7 +12,6 @@ const Home = () => {
   });
 
   useEffect(() => {
-    console.log(data);
     if (!data || !data.noteFeed || !data.noteFeed.notes) {
       return;
     }
