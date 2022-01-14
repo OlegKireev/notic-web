@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import LoginForm from '@/components/LoginForm';
 import { SIGNUP_USER } from '@/api/auth';
 import { useMutation } from '@apollo/client';
+import { useHistory } from 'react-router-dom';
 
 const signUpControls = {
   username: {
@@ -33,10 +34,14 @@ const createFormEmptyState = (controls) => {
 };
 
 const SignUp = () => {
+  const history = useHistory();
   const [formData, setFormData] = useState(createFormEmptyState(signUpControls));
 
   const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
-    onCompleted: (data) => console.log(data.signUp)
+    onCompleted: (data) => {
+      localStorage.setItem('token', data.signUp);
+      history.push('/');
+    }
   });
 
   useEffect(() => {
