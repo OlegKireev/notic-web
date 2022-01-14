@@ -14,10 +14,18 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
+// Проверяем наличие локального токена
+const data = {
+  isLoggedIn: !!localStorage.getItem('token')
+};
+// Записываем данные кэша при начальной загрузке
+cache.writeData({ data });
+
 const apolloClient = new ApolloClient({
   uri,
   link: authLink.concat(httpLink),
   cache,
+  resolvers: {},
   connectToDevTools: true,
 })
 
