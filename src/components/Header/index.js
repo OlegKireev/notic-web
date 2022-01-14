@@ -1,27 +1,12 @@
 import React, { forwardRef } from 'react';
 import logo from '@/assets/img/logo.svg';
 import { HeaderBar, Logo, LogoText, LogoLink } from './styled';
-import { IS_LOGGED_IN } from '@/api/auth';
-import { useApolloClient, useQuery } from '@apollo/client';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../Button';
+import useAuth from '@/hooks/useAuth';
 
 const Header = forwardRef((props, ref) => {
-  const history = useHistory();
-  const { data } = useQuery(IS_LOGGED_IN);
-  const { isLoggedIn } = data; 
-  const client = useApolloClient();
-
-  const handleLogOutClick = () => {
-    // Удаляем токен
-    localStorage.removeItem('token');
-    // Очищаем кэш приложения
-    client.resetStore();
-    // Обновляем локальное состояние
-    client.writeData({ data: { isLoggedIn: false } });
-    // Перенаправляем пользователя на домашнюю страницу
-    history.push('/');
-  };
+  const { isLoggedIn, handleLogOutClick } = useAuth();
 
   return (
     <HeaderBar {...props} ref={ref}>
@@ -34,7 +19,9 @@ const Header = forwardRef((props, ref) => {
           ? <Button 
               kind="text"
               onClick={handleLogOutClick}
-            >Log out</Button>
+            >
+              Log out
+            </Button>
           : (
             <div>
               <Link to="/sign-in">Sign in</Link>
