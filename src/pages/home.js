@@ -19,9 +19,33 @@ const Home = () => {
     setNotes(data.noteFeed.notes);
   }, [data]);
 
+  const handleLoadMoreClick = () => {
+    fetchMore({
+      variables: {
+        cursor: data.noteFeed.cursor,
+      },
+      updateQuery: (prevResult, { fetchMoreResult }) => ({
+        noteFeed: {
+          cursor: fetchMoreResult.noteFeed.cursor,
+          hasNextPage: fetchMoreResult.noteFeed.hasNextPage,
+          notes: [
+            ...prevResult.noteFeed.notes,
+            ...fetchMoreResult.noteFeed.notes,
+          ],
+          __typename: 'noteFeed',
+        }
+      })
+    })
+  };
+
   return (
     <Fragment>
-      <NoteList data={notes} loading={loading} />
+      <NoteList
+        data={notes}
+        loading={loading}
+        hasMore={data && data.noteFeed && data.noteFeed.hasNextPage}
+        onLoadMoreClick={handleLoadMoreClick}
+      />
     </Fragment>
   );
 };
