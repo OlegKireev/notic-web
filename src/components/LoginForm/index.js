@@ -2,10 +2,14 @@ import React from 'react';
 import Button from '../Button';
 import { Wrapper, Input } from './styled';
 
-const LoginForm = ({}) => {
+const LoginForm = ({
+  data,
+  onInputsChange,
+  onSubmit,
+}) => {
   return (
     <Wrapper>
-      <form>
+      <form onSubmit={onSubmit}>
         <Input
           type="text"
           id="username"
@@ -13,6 +17,8 @@ const LoginForm = ({}) => {
           placeholder="username"
           required
           label="Username:"
+          value={data.username}
+          onChange={onInputsChange}
         />
         <Input
           type="text"
@@ -21,6 +27,8 @@ const LoginForm = ({}) => {
           placeholder="email"
           required
           label="Email:"
+          value={data.email}
+          onChange={onInputsChange}
         />
         <Input
           type="password"
@@ -29,6 +37,8 @@ const LoginForm = ({}) => {
           placeholder="password"
           required
           label="Password:"
+          value={data.password}
+          onChange={onInputsChange}
         />
         <Button type='submit'>Sign up</Button>
       </form>
