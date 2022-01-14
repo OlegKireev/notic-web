@@ -5,3 +5,8 @@ export const SIGNUP_USER = gql`
        signUp(email: $email, username: $username, password: $password)
     }
 `;
+
+export const IS_LOGGED_IN = gql`
+{
+  isLoggedIn @client
+} `;
