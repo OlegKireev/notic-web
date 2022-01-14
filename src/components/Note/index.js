@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns'
 import { Wrapper, Author, Avatar, MetaInfo } from './styled';
+import { Link } from 'react-router-dom';
 
 const Note = ({ data }) => {
   const formatedDate = format(data.createdAt, 'MMM Do YYYY');
@@ -17,6 +18,7 @@ const Note = ({ data }) => {
         <span>Favorites: {data.favoriteCount}</span>
         <time dateTime={data.createdAt}>{formatedDate}</time>
       </MetaInfo>
+      <Link to={`/note/${data.id}`}>Permalink</Link>
     </Wrapper>
   )
 };
