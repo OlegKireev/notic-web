@@ -25,6 +25,7 @@ const Header = forwardRef((props, ref) => {
           : (
             <div>
               <Link to="/sign-in">Sign in</Link>
+              {' / '}
               <Link to="/sign-up">Sign up</Link>
             </div>
           )}
