@@ -6,6 +6,12 @@ export const SIGNUP_USER = gql`
     }
 `;
 
+export const SIGNIN_USER = gql`
+    mutation signIn($email: String, $username: String, $password: String!) {
+       signIn(email: $email, username: $username, password: $password)
+    }
+`;
+
 export const IS_LOGGED_IN = gql`
 {
   isLoggedIn @client
