@@ -1,15 +1,21 @@
 import React from 'react';
 import Button from '../Button';
+import Preloader from '../Preloader';
 import { Wrapper, Input } from './styled';
 
-const LoginForm = ({
+const UserForm = ({
+  children,
   data,
   controls,
+  submitText,
+  loading,
+  error,
   onInputsChange,
   onSubmit,
 }) => {
   return (
     <Wrapper>
+      <h3>{children}</h3>
       <form onSubmit={onSubmit}>
         {Object.keys(controls).map((key) => {
           const {id, type, label, placeholder, required} = controls[key];
@@ -27,10 +33,12 @@ const LoginForm = ({
             />
           )
         })}
-        <Button type='submit'>Sign up</Button>
+        <Preloader loading={loading} />
+        {error && <span>{error.message}</span>}
+        <Button type='submit'>{submitText}</Button>
       </form>
     </Wrapper>
   )
 };
 
-export default LoginForm;
+export default UserForm;
