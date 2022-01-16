@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import LoginForm from '@/components/LoginForm';
+import UserForm from '@/components/UserForm';
 import { SIGNUP_USER } from '@/api/auth';
 import { useMutation, useApolloClient } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
@@ -69,12 +69,15 @@ const SignUp = () => {
 
   return (
     <Fragment>
-      <LoginForm 
+      <UserForm 
         data={formData}
         controls={signUpControls}
+        loading={loading}
+        error={error}
+        submitText="Register"
         onInputsChange={handleFormInputChange}
         onSubmit={handleFormSubmit}  
-      />
+      >Sign Up:</UserForm>
     </Fragment>
   );
 };
