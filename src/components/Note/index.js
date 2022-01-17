@@ -13,7 +13,7 @@ const Note = ({ data }) => {
         <Avatar src={data.author.avatar} alt={`${data.author.username} avatar`} height={25} />
         <span>{data.author.username}</span>{' '}
       </Author>
-      <ReactMarkdown source={data.content} />
+      <ReactMarkdown>{data.content}</ReactMarkdown>
       <MetaInfo>
         <span>Favorites: {data.favoriteCount}</span>
         <time dateTime={data.createdAt}>{formatedDate}</time>
