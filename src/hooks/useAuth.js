@@ -6,7 +6,7 @@ const useAuth = () => {
   const client = useApolloClient();
   const history = useHistory();
 
-  const { data } = useQuery(IS_LOGGED_IN);
+  const { data, loading, error } = useQuery(IS_LOGGED_IN);
   const { isLoggedIn } = data; 
 
   const handleLogOutClick = () => {
@@ -22,6 +22,8 @@ const useAuth = () => {
 
   return {
     isLoggedIn,
+    loading,
+    error,
     handleLogOutClick,
   }
 };
