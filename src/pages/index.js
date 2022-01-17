@@ -5,8 +5,9 @@ import MyNotes from './my-notes';
 import Favorites from './favorites';
 import Note from './note'
 import SignUp from './sign-up'
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
 import SignIn from './sign-in';
+import { PublicRoute, PrivateRoute } from '@/components/Route/';
 
 const Pages = () => {
   return (
@@ -14,10 +15,10 @@ const Pages = () => {
       <Switch>
         <Layout>
           <Route path="/" component={Home} exact />
-          <Route path="/sign-up" component={SignUp} />
-          <Route path="/sign-in" component={SignIn} />
-          <Route path="/my-notes" component={MyNotes} />
-          <Route path="/favorites" component={Favorites} />
+          <PublicRoute path="/sign-up" component={SignUp} />
+          <PublicRoute path="/sign-in" component={SignIn} />
+          <PrivateRoute path="/my-notes" component={MyNotes} />
+          <PrivateRoute path="/favorites" component={Favorites} />
           <Route path="/note/:id" component={Note} />
         </Layout>
       </Switch>
