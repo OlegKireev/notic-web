@@ -1,8 +1,9 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
+import { ApolloClient, createHttpLink } from '@apollo/client'
 import { setContext } from 'apollo-link-context';
+import cache from './cache';
 
 const uri = process.env.API_URI;
-const cache = new InMemoryCache();
+
 const httpLink = createHttpLink({ uri });
 
 const authLink = setContext((_, { headers }) => {
@@ -14,13 +15,6 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
-// Проверяем наличие локального токена
-const data = {
-  isLoggedIn: !!localStorage.getItem('token')
-};
-// Записываем данные кэша при начальной загрузке
-cache.writeData({ data });
-
 const apolloClient = new ApolloClient({
   uri,
   link: authLink.concat(httpLink),
@@ -29,6 +23,4 @@ const apolloClient = new ApolloClient({
   connectToDevTools: true,
 })
 
-// Записываем данные кэша после его сброса
-apolloClient.onResetStore(() => cache.writeData({ data }));
 export default apolloClient;
