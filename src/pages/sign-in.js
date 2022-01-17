@@ -42,7 +42,6 @@ const SignIn = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const loginType = formData.login.indexOf('@') >= 0 ? 'email' : 'username';
-    console.log(loginType);
     signIn({
       variables: {
         ...formData,
