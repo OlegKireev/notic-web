@@ -12,6 +12,10 @@ export const pathnames = [
     path: '/favorites',
     label: 'Favotites',
   },
+  {
+    path: '/create-note',
+    label: 'Create Note',
+  },
 ];
 
 export default pathnames;
