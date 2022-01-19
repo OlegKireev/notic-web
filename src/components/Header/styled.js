@@ -13,18 +13,6 @@ export const HeaderBar = styled.header`
   z-index: 1;
 `;
 
-export const LogoText = styled.h1`
-  margin: 0;
-  padding: 0;
-  display: inline;
-  margin-left: .5em;
-  font-size: 1.5rem;
-
-  @media screen and (max-width: ${widths.md}) {
-    font-size: 1.2rem
-  }
-`;
-
 export const Logo = styled.img`
   @media screen and (max-width: ${widths.md}) {
     height: 20px;

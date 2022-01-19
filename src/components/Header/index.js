@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import logo from '@/assets/img/logo.svg';
-import { HeaderBar, Logo, LogoText, LogoLink } from './styled';
+import { HeaderBar, Logo, LogoLink } from './styled';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import useAuth from '@/hooks/useAuth';
@@ -11,8 +11,7 @@ const Header = forwardRef((props, ref) => {
   return (
     <HeaderBar {...props} ref={ref}>
       <LogoLink to="/">
-        <Logo src={logo} alt="Notedly Logo" height="40" />
-        <LogoText>Notedly</LogoText>
+        <Logo src={logo} alt="Notedly Logo" height="20" />
       </LogoLink>
       <div>
         {isLoggedIn
