@@ -2,9 +2,9 @@ import React, { Fragment, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_NOTE } from '@/api/note';
 import Preloader from '@/components/Preloader';
-import Note from '@/components/Note';
+import NoteComponent from '@/components/Note';
 
-const MyNotes = ({match}) => {
+const Note = ({match}) => {
   const id = match.params.id;
 
   const { data, loading, error } = useQuery(GET_NOTE, { variables: { id }})
@@ -20,11 +20,11 @@ const MyNotes = ({match}) => {
       {
         <Preloader loading={loading}>
           {error && <p>Note not found.</p>}
-          {data && <Note data={data.note} />}
+          {data && <NoteComponent data={data.note} />}
         </Preloader>
       }
     </Fragment>
   );
 };
 
-export default MyNotes;
+export default Note;
