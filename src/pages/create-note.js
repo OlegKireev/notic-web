@@ -1,7 +1,7 @@
 import { useMutation } from '@apollo/client';
 import React, { Fragment, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { CREATE_NOTE, GET_NOTE_FEED } from '../api/note';
+import { CREATE_NOTE, GET_NOTE_FEED, GET_MY_NOTES } from '../api/note';
 import NoteForm from '../components/NoteForm';
 
 const CreateNote = () => {
@@ -10,6 +10,8 @@ const CreateNote = () => {
     // Обновляем кеш Apollo
     refetchQueries: [{
        query: GET_NOTE_FEED
+    }, {
+      query: GET_MY_NOTES
     }],
     onCompleted: (data) => {
       history.push(`note/${data.createNote.id}`);
