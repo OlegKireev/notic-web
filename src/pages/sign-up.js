@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import UserForm from '@/components/UserForm';
 import { SIGNUP_USER } from '@/api/auth';
-import { useMutation, useApolloClient } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
+import { isLoggedInVar } from '../api/cache';
 
 const signUpControls = {
   username: {
@@ -34,7 +35,6 @@ const createFormEmptyState = (controls) => {
 };
 
 const SignUp = () => {
-  const client = useApolloClient();
   const history = useHistory();
 
   const [formData, setFormData] = useState(createFormEmptyState(signUpControls));
@@ -43,7 +43,7 @@ const SignUp = () => {
     onCompleted: (data) => {
       localStorage.setItem('token', data.signUp);
       // Обновляем локальный кэш Apollo
-      client.writeData({ data: { isLoggedIn: true }});
+      isLoggedInVar(true);
       history.push('/');
     }
   });
