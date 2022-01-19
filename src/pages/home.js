@@ -5,7 +5,9 @@ import NoteList from '../components/NoteList';
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
-  const { data, loading, error, fetchMore } = useQuery(GET_NOTE_FEED);
+  const { data, loading, error, fetchMore } = useQuery(GET_NOTE_FEED, {
+    fetchPolicy: 'network-only',
+  });
 
   useEffect(() => {
     document.title = 'Notedly';
