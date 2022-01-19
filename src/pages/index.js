@@ -9,6 +9,7 @@ import Layout from '@/components/Layout';
 import SignIn from './sign-in';
 import { PublicRoute, PrivateRoute } from '@/components/Route/';
 import CreateNote from './create-note';
+import EditNote from './edit-note';
 
 const Pages = () => {
   return (
@@ -21,6 +22,7 @@ const Pages = () => {
           <PrivateRoute path="/my-notes" component={MyNotes} />
           <PrivateRoute path="/favorites" component={Favorites} />
           <PrivateRoute path="/create-note" component={CreateNote} />
+          <PrivateRoute path="/edit-note/:id" component={EditNote} />
           <Route path="/note/:id" component={Note} />
         </Layout>
       </Switch>
