@@ -4,6 +4,14 @@ import normalize from 'normalize.css';
 export default createGlobalStyle`
   ${normalize}
 
+  :root {
+    --color-light: #f4edd8;
+    --color-fontain-blue: #57b1b2;
+    --color-dirty-blue: #458a97;
+    --color-light-navy-blue: #33637c;
+    --color-rhino: #213c61;
+  }
+
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -26,7 +34,11 @@ export default createGlobalStyle`
   
   a:link,
   a:visited {
-    color: #0077cc;
+    color: var(--color-fontain-blue);
+
+    &:hover {
+      color: var(--color-dirty-blue);
+    }
   }
 
   #root {
