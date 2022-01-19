@@ -118,3 +118,12 @@ export const DELETE_NOTE = gql`
     removeNote(id: $id)
 }
 `;
+
+export const TOGGLE_FAVORITE = gql`
+  mutation toggleFavorite($id: ID!) {
+    toggleFavorite(id: $id) {
+      id
+      favoriteCount
+    }
+  } 
+`;
