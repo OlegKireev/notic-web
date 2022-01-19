@@ -1,7 +1,7 @@
 import { useMutation } from '@apollo/client';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { DELETE_NOTE, GET_NOTES, GET_MY_NOTES } from '../../api/note';
+import { DELETE_NOTE, GET_MY_NOTES } from '../../api/note';
 import Button from '../Button';
 
 const DeleteNote = ({ id }) => {
@@ -11,7 +11,7 @@ const DeleteNote = ({ id }) => {
     variables: {
       id
     },
-    refetchQueries: [{ query: GET_MY_NOTES, GET_NOTES }],
+    refetchQueries: [{ query: GET_MY_NOTES}],
     onCompleted: () => {
       // Перенаправляем пользователя на страницу "my notes"
       history.push('/my-notes');
