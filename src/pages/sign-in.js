@@ -30,7 +30,7 @@ const SignIn = () => {
   const [formData, setFormData] = useState(createFormEmptyState(signInControls));
 
   useEffect(() => {
-    document.title = 'Sign In — Notedly';
+    document.title = 'Sign In — Notic';
   }, []);
 
   const handleFormInputChange = (e) => {

@@ -11,7 +11,7 @@ const Header = forwardRef((props, ref) => {
   return (
     <HeaderBar {...props} ref={ref}>
       <LogoLink to="/">
-        <Logo src={logo} alt="Notedly Logo" height="20" />
+        <Logo src={logo} alt="Notic Logo" height="20" />
       </LogoLink>
       <div>
         {isLoggedIn

@@ -8,7 +8,7 @@ const MyNotes = () => {
   const { data, loading, error } = useQuery(GET_MY_NOTES)
 
   useEffect(() => {
-    document.title = 'My Notes — Notedly';
+    document.title = 'My Notes — Notic';
   });
   if (loading) return <Preloader loading={loading}/>;
   if (error) return `Error! ${error.message}`;

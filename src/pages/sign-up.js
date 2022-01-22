@@ -49,7 +49,7 @@ const SignUp = () => {
   });
 
   useEffect(() => {
-    document.title = 'Sign Up — Notedly';
+    document.title = 'Sign Up — Notic';
   }, []);
 
   const handleFormInputChange = (e) => {

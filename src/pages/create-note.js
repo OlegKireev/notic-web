@@ -19,7 +19,7 @@ const CreateNote = () => {
   });
 
   useEffect(() => {
-    document.title = 'Create Note — Notedly';
+    document.title = 'Create Note — Notic';
   });
   
   return (

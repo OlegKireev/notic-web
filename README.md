@@ -1,4 +1,4 @@
-# Notedly Frontent App
+# Notic Frontent App
 Frontend app created with React for managing a notes app.
 ## Technologies Stack:
 

@@ -7,7 +7,7 @@ import Preloader from '../components/Preloader';
 const Favorites = () => {
   const { data, loading, error } = useQuery(GET_MY_FAVORITES);
   useEffect(() => {
-    document.title = 'Favorites — Notedly';
+    document.title = 'Favorites — Notic';
   });
   if (loading) return <Preloader loading={loading}/>
   if (error) return <p>{error.message}</p>

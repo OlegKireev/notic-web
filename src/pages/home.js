@@ -10,7 +10,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    document.title = 'Notedly';
+    document.title = 'Notic';
   });
 
   useEffect(() => {
