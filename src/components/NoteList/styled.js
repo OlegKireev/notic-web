@@ -1,18 +1,22 @@
 import styled from 'styled-components';
 import Button from '../Button/styled';
+import NoteComponent from '../Note';
 
 export const Wrapper = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+
+& code {
+  white-space: pre-wrap;
+}
 `;
 
-export const List = styled.div`
-  > *:not(:last-child) {
-    margin-bottom: 2em;
-    padding-bottom: 2em;
-    border-bottom: 1px solid #f5f4f0;
+export const Note = styled(NoteComponent)`
+  transition: background-color .2s ease;
+
+  :hover {
+    cursor: pointer;
+    background-color: #fff9ea;
   }
-`;
+`
 
 export const LoadMoreButton = styled(Button)`
   width: 100%;
