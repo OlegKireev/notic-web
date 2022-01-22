@@ -5,7 +5,10 @@ export default createGlobalStyle`
   ${normalize}
 
   :root {
-    --color-light: #f4edd8;
+    --color-white: #fefefe;
+    --color-gray-100: #f5f5f5;
+    --color-gray-500: #959393;
+    --color-light: #fff7ea;
     --color-fontain-blue: #57b1b2;
     --color-dirty-blue: #458a97;
     --color-light-navy-blue: #33637c;
@@ -22,10 +25,10 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    background-color: #fff;
+    font-family: "Helvetica", "Arial", sans-serif;
+    background-color: var(--color-gray-100);
     line-height: 1.4;
+    font-weight: 400;
   }
 
   a {
