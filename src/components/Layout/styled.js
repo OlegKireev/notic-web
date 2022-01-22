@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 
 export const Aside = styled.aside`
   padding: 1em;
-  background: #f5f4f0;
+  background: var(--color-white);
   width: 15.75rem;
   height: 100%;
   flex-shrink: 0;
