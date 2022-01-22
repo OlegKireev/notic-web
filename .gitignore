@@ -73,3 +73,4 @@ cypress/screenshots
 
 final/
 solutions/
+.DS_Store
