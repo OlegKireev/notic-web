@@ -13,6 +13,9 @@ export default createGlobalStyle`
     --color-dirty-blue: #458a97;
     --color-light-navy-blue: #33637c;
     --color-rhino: #213c61;
+    --color-red-500: #f70d1a;
+    --color-red-600: #ce0a17;
+    --color-red-700: #a40812;
   }
 
   *, *:before, *:after {
