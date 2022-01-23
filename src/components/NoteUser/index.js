@@ -5,6 +5,7 @@ import Preloader from '../Preloader';
 import { GET_ME } from '@/api/user';
 import DeleteNote from '../DeleteNote';
 import FavoriteNote from '../FavoriteNote';
+import { Wrapper } from './styled';
 
 const NoteUser = ({ note }) => {
   const { data, loading, error } = useQuery(GET_ME);
@@ -12,7 +13,7 @@ const NoteUser = ({ note }) => {
   if (loading) return <Preloader loading={loading} />;
   if (error) return <p>{error.message}</p>;
   return (
-    <div>
+    <Wrapper>
       <FavoriteNote
         me={data.me}
         noteId={note.id}
@@ -24,7 +25,7 @@ const NoteUser = ({ note }) => {
           <DeleteNote id={note.id} />
         </Fragment>
       )}
-    </div>
+    </Wrapper>
   )
 };
 
