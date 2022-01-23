@@ -16,10 +16,7 @@ const DeleteNote = ({ id }) => {
       // Перенаправляем пользователя на страницу "my notes"
       history.push('/my-notes');
     }
-  });
-
-  console.log(deleteNote);
-  
+  });  
 
   return <Button onClick={deleteNote}>Delete Note</Button>;
 };
