@@ -21,6 +21,7 @@ export const Dialog = styled.div`
   min-height: 10vh;
   background-color: var(--color-white);
   border-radius: .25em;
+  overflow: hidden;
 `
 
 export const Header = styled.div`
