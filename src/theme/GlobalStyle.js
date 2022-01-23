@@ -41,10 +41,10 @@ export default createGlobalStyle`
   
   a:link,
   a:visited {
-    color: var(--color-fontain-blue);
+    color: var(--color-primary);
 
     &:hover {
-      color: var(--color-dirty-blue);
+      color: var(--color-rhino);
     }
   }
 
