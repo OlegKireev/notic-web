@@ -6,6 +6,7 @@ import { GET_ME } from '@/api/user';
 import FavoriteNote from '../FavoriteNote';
 import { Wrapper } from './styled';
 import Button from '../Button';
+import IconDelete from '@/Icons/Delete';
 
 const NoteUser = ({ 
   note,
@@ -26,9 +27,10 @@ const NoteUser = ({
         <Fragment>
           <Link to={`/edit-note/${note.id}`}>Edit</Link>
           <Button
+            kind="ghost"
             onClick={onRemoveModalOpenerClick}
           >
-            Delete
+            <IconDelete />
           </Button>
         </Fragment>
       )}
