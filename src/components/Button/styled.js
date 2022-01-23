@@ -22,4 +22,16 @@ const Button = styled.button`
   }
 `;
 
+export const ButtonDanger = styled(Button)`
+  background-color: var(--color-red-500);
+
+  :hover {
+    background-color: var(--color-red-600)
+  }
+
+  :active {
+    background-color: var(--color-red-700)
+  }
+`;
+
 export default Button;

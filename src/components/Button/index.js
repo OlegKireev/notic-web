@@ -1,8 +1,10 @@
 import React from 'react';
-import StyledButton from "./styled";
+import StyledButton, { ButtonDanger } from "./styled";
 
-const Button = ({...props}) => (
-  <StyledButton {...props}/>
-)
+const Button = ({kind, ...props}) => {
+  if (kind === 'danger') return <ButtonDanger {...props}/>
+  return ( 
+  <StyledButton {...props} />
+)}
 
 export default Button;
