@@ -16,6 +16,7 @@ export default createGlobalStyle`
     --color-red-500: #f70d1a;
     --color-red-600: #ce0a17;
     --color-red-700: #a40812;
+    --color-primary: var(--color-dirty-blue);
   }
 
   *, *:before, *:after {
