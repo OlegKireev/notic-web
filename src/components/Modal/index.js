@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/styled';
+import Button from '../Button';
 import { Backdrop, Content, Dialog, Footer, Header } from './styled';
 
 const Modal = ({
@@ -13,10 +13,9 @@ const Modal = ({
     <Backdrop>
       <Dialog>
         <Header>
-          <Button
+          <Button kind="close"
             onClick={onClose}
           >
-            Close
           </Button>
         </Header>
         <Content>

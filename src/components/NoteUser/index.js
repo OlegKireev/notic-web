@@ -5,7 +5,7 @@ import Preloader from '../Preloader';
 import { GET_ME } from '@/api/user';
 import FavoriteNote from '../FavoriteNote';
 import { Wrapper } from './styled';
-import Button from '../Button/styled';
+import Button from '../Button';
 
 const NoteUser = ({ 
   note,
