@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import Preloader from '../Preloader';
 import { GET_ME } from '@/api/user';
 import FavoriteNote from '../FavoriteNote';
-import { Wrapper } from './styled';
-import Button from '../Button';
+import { Wrapper, EditLink, DeleteButton } from './styled';
 import IconDelete from '@/Icons/Delete';
+import IconEdit from '../../Icons/Edit';
 
 const NoteUser = ({ 
   note,
@@ -25,13 +24,15 @@ const NoteUser = ({
       />
       {data.me.id === note.author.id && (
         <Fragment>
-          <Link to={`/edit-note/${note.id}`}>Edit</Link>
-          <Button
+          <EditLink to={`/edit-note/${note.id}`}>
+            <IconEdit />
+          </EditLink>
+          <DeleteButton
             kind="ghost"
             onClick={onRemoveModalOpenerClick}
           >
             <IconDelete />
-          </Button>
+          </DeleteButton>
         </Fragment>
       )}
     </Wrapper>
