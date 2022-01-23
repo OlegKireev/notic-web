@@ -6,9 +6,13 @@ const Button = styled.button`
   border: 0;
   border-radius: .375em;
   cursor: pointer;
+  transition: .1s ease;
+  transition-property: background-color, color;
+`;
+
+export const PrimaryButton = styled(Button)`
   color: ${({kind}) => kind === 'text' ? '#0077cc' : '#ffffff'};
   background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0077cc'};
-  transition: background-color .1s ease;
 
   :hover {
     background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0088dd'};
@@ -20,10 +24,28 @@ const Button = styled.button`
     background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#005fa3'};
     color: ${({kind}) => kind === 'text' ? '#005fa3' : 'ffffff'};
   }
+`
+
+export const GhostButton = styled(Button)`
+  background-color: transparent;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    color: var(--color-light-navy-blue);
+  }
+
+  :active {
+    color: var(--color-rhino)
+  }
 `;
 
 export const ButtonDanger = styled(Button)`
   background-color: var(--color-red-500);
+  color: var(--color-white);
 
   :hover {
     background-color: var(--color-red-600)
@@ -34,4 +56,4 @@ export const ButtonDanger = styled(Button)`
   }
 `;
 
-export default Button;
+export default PrimaryButton;
