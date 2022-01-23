@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { fadeIn } from '@/theme/keyframes';
+import { slideDown } from '../../theme/keyframes';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -13,7 +14,7 @@ export const Backdrop = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, .425);
   backdrop-filter: blur(.5px);
-  animation: ${fadeIn} .2s ease;
+  animation: ${fadeIn} .2s ease, ${slideDown} .2s ease;
 `
 
 export const Dialog = styled.div`
@@ -21,6 +22,7 @@ export const Dialog = styled.div`
   min-height: 10vh;
   background-color: var(--color-white);
   border-radius: .25em;
+  box-shadow: 0px 0px 30px 3px rgba(33, 60, 97, 0.1);
   overflow: hidden;
 `
 
