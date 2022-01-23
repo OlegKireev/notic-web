@@ -1,16 +1,21 @@
 import React from 'react';
-import StyledButton, { ButtonDanger, GhostButton } from "./styled";
-import IconClose from '@/Icons/Close';
+import StyledButton, { ButtonDanger, ButtonGhost } from "./styled";
 
 const Button = ({kind, ...props}) => {
-  if (kind === 'danger') return <ButtonDanger {...props}/>
-  if (kind === 'close') return (
-    <GhostButton {...props}>
-      <IconClose />
-    </GhostButton>
-  )
+  let ButtonComponent = StyledButton; 
+  switch (kind) {
+    case 'danger':
+      ButtonComponent = ButtonDanger;
+      break;
+    case 'ghost':
+      ButtonComponent = ButtonGhost;
+      break;
+    default:
+      break;
+  }
+  
   return ( 
-  <StyledButton {...props} />
+  <ButtonComponent {...props} />
 )}
 
 export default Button;

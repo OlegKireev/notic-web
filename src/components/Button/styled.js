@@ -7,7 +7,7 @@ const Button = styled.button`
   border-radius: .375em;
   cursor: pointer;
   transition: .1s ease;
-  transition-property: background-color, color;
+  transition-property: background-color, color, fill;
 `;
 
 export const PrimaryButton = styled(Button)`
@@ -26,20 +26,23 @@ export const PrimaryButton = styled(Button)`
   }
 `
 
-export const GhostButton = styled(Button)`
-  background-color: transparent;
-  color: var(--color-primary);
-  fill: var(--color-primary);
+export const ButtonGhost = styled(Button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: .25em;
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  background-color: transparent;
 
   :hover {
     color: var(--color-light-navy-blue);
+    fill: var(--color-light-navy-blue);
   }
 
   :active {
-    color: var(--color-rhino)
+    color: var(--color-rhino);
+    fill: var(--color-rhino);
   }
 `;
 
