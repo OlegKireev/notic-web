@@ -7,7 +7,9 @@ import { useHistory } from 'react-router-dom';
 const NoteList = ({ data, loading, hasMore, onLoadMoreClick }) => {
   const history = useHistory();
 
-  const handleNoteClick = (id) => () => {
+  const handleNoteClick = (id) => (e) => {
+    const interactiveTags = ['A', 'BUTTON'];
+    if (interactiveTags.includes(e.target.tagName)) { return }
     history.push(`/note/${id}`);
   };
 
