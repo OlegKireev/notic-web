@@ -38,3 +38,15 @@ export const MetaInfo = styled.div`
   display: flex;
   justify-content: space-between;
 `
+
+export const ModalParagraph = styled.p`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+`
+
+export const ModalControls = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: .5em;
+`
