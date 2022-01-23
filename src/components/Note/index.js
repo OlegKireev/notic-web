@@ -26,7 +26,9 @@ const Note = ({ data, ...props }) => {;
       </Header>
       <ReactMarkdown>{data.content}</ReactMarkdown>
       <MetaInfo>
-        <span>Favorites: {data.favoriteCount}</span>
+        {!isLoggedIn && (
+          <span>Favorites: {data.favoriteCount}</span>
+        )}
       </MetaInfo>
       {isLoggedIn && (
         <NoteUser note={data} />
