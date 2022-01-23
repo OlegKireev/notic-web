@@ -40,27 +40,30 @@ const Note = ({ data, ...props }) => {;
         {isLoggedIn && (
           <NoteUser 
             note={data}
-            onRemoveModalOpenerClick={handleRemoveModalOpenerClick}  
+            onRemoveModalOpenerClick={handleRemoveModalOpenerClick} 
           />
         )}
-        <Modal
-          isActive={isLoggedIn && isShowDeleteModal}
-          footer={(
-            <ModalControls>
-              <Button
-                onClick={handleRemoveModalCloserClick}
-              >
-                Cancel
-              </Button>
-              <DeleteNote id={data.id} />
-            </ModalControls>
-          )}
-          onClose={handleRemoveModalCloserClick}
-        >
-          <ModalParagraph>
-            Delete this note?
-          </ModalParagraph>
-        </Modal>
+        {isShowDeleteModal && (
+          <Modal
+            isActive={isLoggedIn && isShowDeleteModal}
+            footer={(
+              <ModalControls>
+                <Button
+                  onClick={handleRemoveModalCloserClick}
+                >
+                  Cancel
+                </Button>
+                <DeleteNote id={data.id} />
+              </ModalControls>
+            )}
+            onClose={handleRemoveModalCloserClick}
+          >
+            <ModalParagraph>
+              Delete this note?
+            </ModalParagraph>
+          </Modal>
+          )
+        }
       </Wrapper>
     </Fragment>
   )
