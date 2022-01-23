@@ -7,6 +7,10 @@ import { useHistory } from 'react-router-dom';
 const NoteList = ({ data, loading, hasMore, onLoadMoreClick }) => {
   const history = useHistory();
 
+  const handleNoteClick = (id) => () => {
+    history.push(`/note/${id}`);
+  };
+
   return (
     <Preloader loading={loading}>
       <Wrapper>
@@ -22,9 +26,7 @@ const NoteList = ({ data, loading, hasMore, onLoadMoreClick }) => {
                   data={note}
                   tabIndex="0"
                   role="link"
-                  onClick={() => {
-                    history.push(`/note/${note.id}`);
-                  }}
+                  onClick={handleNoteClick(note.id)}
                 />
               ))}
             </MasonryLayout>
