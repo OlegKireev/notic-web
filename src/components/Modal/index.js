@@ -13,7 +13,6 @@ const Modal = ({
 
   const handleEssKeydown = (e) => {
     if (e.key !== 'Escape') { return }
-    console.log(e);
     onClose();
   };
 
