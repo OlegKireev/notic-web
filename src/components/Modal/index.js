@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '../Button';
 import { Backdrop, Content, Dialog, Footer, Header } from './styled';
 import IconClose from '@/Icons/Close';
@@ -10,8 +10,23 @@ const Modal = ({
   onClose,
 }) => {
   if (!isActive) return null;
+
+  const handleEssKeydown = (e) => {
+    if (e.key !== 'Escape') { return }
+    console.log(e);
+    onClose();
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleEssKeydown);
+    return () => { 
+      window.removeEventListener('keydown', handleEssKeydown);
+    }
+  });
+
   return (
-    <Backdrop>
+    <Backdrop
+    >
       <Dialog>
         <Header>
           <Button kind="ghost"
