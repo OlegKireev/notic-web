@@ -15,6 +15,7 @@ const SVGIconContainer = function SVGIconContainerComponent({
   as,
   height,
   width,
+  viewBox,
   children,
   ...props
 }) {
@@ -23,9 +24,9 @@ const SVGIconContainer = function SVGIconContainerComponent({
       <symbol
         fill="currentColor"
         stroke="none"
-        viewBox={`0 0 ${width} ${height}`}
-        height="1em"
-        width={`${width / height}em`}
+        viewBox={viewBox || `0 0 ${width} ${height}`}
+        height={height}
+        width={width}
         {...props}
       >
         {children}
@@ -39,9 +40,9 @@ const SVGIconContainer = function SVGIconContainerComponent({
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       stroke="none"
-      viewBox={`0 0 ${width} ${height}`}
-      height="1em"
-      width={`${width / height}em`}
+      viewBox={viewBox || `0 0 ${width} ${height}`}
+      height={height}
+      width={width}
       {...props}
     >
       {children}
