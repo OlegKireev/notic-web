@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { GET_MY_FAVORITES, TOGGLE_FAVORITE } from '@/api/note';
-import IconStar from '@/Icons/Star';
 import Button from '../Button';
+import IconStar from '@/Icons/Star';
 import IconStarOutline from '@/Icons/StarOutline';
+import { FavoriteCounter } from './styled';
 
 const FavoriteNote = ({
   me,
@@ -37,7 +38,9 @@ const FavoriteNote = ({
         ? <IconStar />
         : <IconStarOutline />
       }
-      {count}
+      <FavoriteCounter>
+        {count}
+      </FavoriteCounter>
     </Button>
   )
 };
