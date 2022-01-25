@@ -12,7 +12,7 @@ export const NavList = styled.ul`
 
   a {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: .875em;
     color: #333;
     text-decoration: none; 
   }
