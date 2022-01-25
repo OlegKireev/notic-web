@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import logo from '@/assets/img/logo.svg';
-import { HeaderBar, Logo, LogoLink } from './styled';
+import { HeaderBar, Logo, LogoLink, ProfileWrapper } from './styled';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import useAuth from '@/hooks/useAuth';
@@ -8,6 +8,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ME } from '@/api/user';
 import ProfileLink from '../ProfileLink';
 import Preloader from '../Preloader';
+import IconLogout from '@/Icons/Logout';
 
 const Header = forwardRef((props, ref) => {
   const { isLoggedIn, handleLogOutClick } = useAuth();
@@ -21,7 +22,7 @@ const Header = forwardRef((props, ref) => {
       <div>
         {isLoggedIn
           ? ( 
-              <div>
+              <ProfileWrapper>
                 {loading
                   ? <Preloader />
                   : <ProfileLink data={userData.me} /> 
@@ -30,9 +31,9 @@ const Header = forwardRef((props, ref) => {
                   kind="ghost"
                   onClick={handleLogOutClick}
                 >
-                  Log out
+                  <IconLogout />
                 </Button>
-              </div>
+              </ProfileWrapper>
           )
           : (
             <div>

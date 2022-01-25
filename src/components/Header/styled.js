@@ -24,3 +24,9 @@ export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
 `;
+
+export const ProfileWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .5em;
+`
