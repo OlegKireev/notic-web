@@ -10,11 +10,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Note = styled(NoteComponent)`
-  transition: background-color .2s ease;
+  border: 2px solid transparent;
 
   :hover {
     cursor: pointer;
-    background-color: #fff9ea;
+    background-color: var(--color-catskill-white);
+    border-color: var(--color-fontain-blue);
   }
 `
 
