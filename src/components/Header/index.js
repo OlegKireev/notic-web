@@ -16,7 +16,7 @@ const Header = forwardRef((props, ref) => {
       <div>
         {isLoggedIn
           ? <Button 
-              kind="text"
+              kind="ghost"
               onClick={handleLogOutClick}
             >
               Log out

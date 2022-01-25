@@ -6,6 +6,7 @@ export const HeaderBar = styled.header`
   width: 100%;
   padding: 0.5em 1em;
   display: flex;
+  min-height: 3em;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
