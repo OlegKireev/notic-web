@@ -1,13 +1,17 @@
 import React from 'react';
+import { Wrapper, Avatar, Username } from './styled';
 
 const ProfileLink = ({
   data
 }) => {
   const { username, avatar } = data;
   return (
-    <div>
-      {username}
-    </div>
+    <Wrapper>
+      <Avatar src={avatar} alt={`${username} avatar`}/>
+      <Username>
+        {username}
+      </Username>
+    </Wrapper>
   )
 };
 
