@@ -9,6 +9,7 @@ export default createGlobalStyle`
     --color-gray-100: #f5f5f5;
     --color-gray-500: #959393;
     --color-light: #fff7ea;
+    --color-catskill-white: #ebf7f7;
     --color-fontain-blue: #57b1b2;
     --color-dirty-blue: #458a97;
     --color-light-navy-blue: #33637c;
