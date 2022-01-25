@@ -4,9 +4,14 @@ import { HeaderBar, Logo, LogoLink } from './styled';
 import { Link } from 'react-router-dom';
 import Button from '../Button';
 import useAuth from '@/hooks/useAuth';
+import { useQuery } from '@apollo/client';
+import { GET_ME } from '@/api/user';
+import ProfileLink from '../ProfileLink';
+import Preloader from '../Preloader';
 
 const Header = forwardRef((props, ref) => {
   const { isLoggedIn, handleLogOutClick } = useAuth();
+  const { data: userData, loading } = useQuery(GET_ME);
 
   return (
     <HeaderBar {...props} ref={ref}>
@@ -15,12 +20,20 @@ const Header = forwardRef((props, ref) => {
       </LogoLink>
       <div>
         {isLoggedIn
-          ? <Button 
-              kind="ghost"
-              onClick={handleLogOutClick}
-            >
-              Log out
-            </Button>
+          ? ( 
+              <div>
+                {loading
+                  ? <Preloader />
+                  : <ProfileLink data={userData.me} /> 
+                }
+                <Button 
+                  kind="ghost"
+                  onClick={handleLogOutClick}
+                >
+                  Log out
+                </Button>
+              </div>
+          )
           : (
             <div>
               <Link to="/sign-in">Sign in</Link>
