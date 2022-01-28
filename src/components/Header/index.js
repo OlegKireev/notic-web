@@ -10,12 +10,12 @@ import ProfileLink from '../ProfileLink';
 import Preloader from '../Preloader';
 import IconLogout from '@/Icons/Logout';
 
-const Header = forwardRef((props, ref) => {
+const Header = () => {
   const { isLoggedIn, handleLogOutClick } = useAuth();
   const { data: userData, loading } = useQuery(GET_ME);
 
   return (
-    <HeaderBar {...props} ref={ref}>
+    <HeaderBar>
       <LogoLink to="/">
         <Logo src={logo} alt="Notic Logo" height="20" />
       </LogoLink>
@@ -45,6 +45,6 @@ const Header = forwardRef((props, ref) => {
       </div>
     </HeaderBar>
   )
-});
+};
 
 export default Header;
