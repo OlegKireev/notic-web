@@ -27,7 +27,8 @@ const NoteForm = ({
           required
           type="text"
           name="content"
-          placeholder='Note content'
+          placeholder="Note content"
+          rows="10"
           value={value.content}
           onChange={handleTextAreaChange}
         />
