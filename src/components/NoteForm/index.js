@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/styled';
-import { Wrapper, Form, TextArea } from './styled';
+import { Wrapper, Form, StyledTextarea } from './styled';
 
 const NoteForm = ({ 
   content,
@@ -23,7 +23,7 @@ const NoteForm = ({
   return (
     <Wrapper>
       <Form onSubmit={handleFormSubmit}>
-        <TextArea 
+        <StyledTextarea 
           required
           type="text"
           name="content"

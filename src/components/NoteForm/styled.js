@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Textarea from '../Textarea';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -6,8 +7,7 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   height: 100%;
 `;
-export const TextArea = styled.textarea`
-  width: 100%;
+export const StyledTextarea = styled(Textarea)`
   height: 90%;
-  padding: .5em;
+  margin-bottom: .5em;
 `;
