@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns';
 import {
@@ -10,6 +11,20 @@ import NoteUser from '../NoteUser';
 import Modal from '../Modal';
 import Button from '../Button';
 import DeleteNote from '../DeleteNote';
+
+const propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    author: PropTypes.shape({
+      id: PropTypes.string,
+      avatar: PropTypes.string,
+      username: PropTypes.string,
+    }),
+    content: PropTypes.string,
+    createdAt: PropTypes.string,
+    favoriteCount: PropTypes.number,
+  }).isRequired,
+};
 
 function Note({ data, ...props }) {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
@@ -71,5 +86,7 @@ function Note({ data, ...props }) {
     </Wrapper>
   );
 }
+
+Note.propTypes = propTypes;
 
 export default Note;

@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/styled';
 import { Wrapper, Form, StyledTextarea } from './styled';
+
+const propTypes = {
+  content: PropTypes.string,
+  action: PropTypes.func,
+};
+const defaultProps = {
+  content: '',
+  action: () => {},
+};
 
 function NoteForm({
   content,
   action,
 }) {
-  const [value, setValue] = useState({ content: content || '' });
+  const [value, setValue] = useState({ content });
   const handleTextAreaChange = (e) => setValue({
     ...value,
     [e.target.name]: e.target.value,
@@ -37,5 +47,8 @@ function NoteForm({
     </Wrapper>
   );
 }
+
+NoteForm.propTypes = propTypes;
+NoteForm.defaultProps = defaultProps;
 
 export default NoteForm;

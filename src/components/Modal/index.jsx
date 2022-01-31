@@ -1,9 +1,23 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import {
   Backdrop, Content, Dialog, Footer, Header,
 } from './styled';
 import IconClose from '@/Icons/Close';
+
+const propTypes = {
+  children: PropTypes.node,
+  footer: PropTypes.node,
+  isActive: PropTypes.bool,
+  onClose: PropTypes.func,
+};
+const defaultProps = {
+  children: null,
+  footer: null,
+  isActive: false,
+  onClose: () => {},
+};
 
 function Modal({
   children,
@@ -46,5 +60,8 @@ function Modal({
     </Backdrop>
   );
 }
+
+Modal.propTypes = propTypes;
+Modal.defaultProps = defaultProps;
 
 export default Modal;

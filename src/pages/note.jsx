@@ -6,7 +6,12 @@ import Preloader from '@/components/Preloader';
 import NoteComponent from '@/components/Note';
 
 const propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  match: PropTypes.shape({
+    isExact: PropTypes.bool,
+    params: PropTypes.objectOf(PropTypes.string),
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 function Note({ match }) {

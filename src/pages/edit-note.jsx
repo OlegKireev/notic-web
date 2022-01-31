@@ -9,7 +9,12 @@ import { GET_ME } from '../api/user';
 import { EDIT_NOTE } from '../api/note';
 
 const propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  match: PropTypes.shape({
+    isExact: PropTypes.bool,
+    params: PropTypes.objectOf(PropTypes.string),
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 function EditNote({ match }) {

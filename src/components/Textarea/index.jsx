@@ -1,5 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyledTextarea } from './styled';
+
+const propTypes = {
+  label: PropTypes.string,
+  id: PropTypes.string.isRequired,
+};
+const defaultProps = {
+  label: '',
+};
 
 function Textarea({ label, id, ...props }) {
   return (
@@ -12,5 +21,8 @@ function Textarea({ label, id, ...props }) {
     </div>
   );
 }
+
+Textarea.propTypes = propTypes;
+Textarea.defaultProps = defaultProps;
 
 export default Textarea;

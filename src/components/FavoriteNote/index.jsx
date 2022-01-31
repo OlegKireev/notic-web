@@ -1,10 +1,27 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useMutation } from '@apollo/client';
 import { GET_MY_FAVORITES, TOGGLE_FAVORITE } from '@/api/note';
 import Button from '../Button';
 import IconStar from '@/Icons/Star';
 import IconStarOutline from '@/Icons/StarOutline';
 import { FavoriteCounter } from './styled';
+
+const propTypes = {
+  me: PropTypes.shape({
+    id: PropTypes.string,
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    favoriteNotes: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+    })),
+  }).isRequired,
+  noteId: PropTypes.string.isRequired,
+  favoriteCount: PropTypes.number,
+};
+const defaultProps = {
+  favoriteCount: 0,
+};
 
 function FavoriteNote({
   me,
@@ -43,5 +60,8 @@ function FavoriteNote({
     </Button>
   );
 }
+
+FavoriteNote.propTypes = propTypes;
+FavoriteNote.defaultProps = defaultProps;
 
 export default FavoriteNote;

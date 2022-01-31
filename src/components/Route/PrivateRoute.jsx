@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 import useAuth from '@/hooks/useAuth';
 import Preloader from '../Preloader';
+
+const propTypes = {
+  component: PropTypes.node.isRequired,
+};
 
 function PrivateRoute({ component: Component, ...rest }) {
   const { isLoggedIn, loading, error } = useAuth();
@@ -27,5 +32,7 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   );
 }
+
+PrivateRoute.propTypes = propTypes;
 
 export default PrivateRoute;

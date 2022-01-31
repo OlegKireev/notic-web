@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { useQuery } from '@apollo/client';
 import Preloader from '../Preloader';
 import { GET_ME } from '@/api/user';
@@ -6,6 +7,24 @@ import FavoriteNote from '../FavoriteNote';
 import { Wrapper, EditLink, DeleteButton } from './styled';
 import IconDelete from '@/Icons/Delete';
 import IconEdit from '@/Icons/Edit';
+
+const propTypes = {
+  note: PropTypes.shape({
+    id: PropTypes.string,
+    author: PropTypes.shape({
+      id: PropTypes.string,
+      avatar: PropTypes.string,
+      username: PropTypes.string,
+    }),
+    content: PropTypes.string,
+    createdAt: PropTypes.string,
+    favoriteCount: PropTypes.number,
+  }).isRequired,
+  onRemoveModalOpenerClick: PropTypes.func,
+};
+const defaultProps = {
+  onRemoveModalOpenerClick: () => {},
+};
 
 function NoteUser({
   note,
@@ -38,5 +57,8 @@ function NoteUser({
     </Wrapper>
   );
 }
+
+NoteUser.propTypes = propTypes;
+NoteUser.defaultProps = defaultProps;
 
 export default NoteUser;
