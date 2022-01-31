@@ -39,6 +39,7 @@ function NoteForm({
           name="content"
           placeholder="Note content"
           rows="10"
+          id="note-edit-form"
           value={value.content}
           onChange={handleTextAreaChange}
         />
