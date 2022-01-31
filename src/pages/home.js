@@ -1,7 +1,8 @@
-import React, { useEffect, Fragment, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_NOTE_FEED } from '@/api/note';
 import NoteList from '../components/NoteList';
+import Preloader from '../components/Preloader';
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
@@ -39,15 +40,14 @@ const Home = () => {
     })
   };
 
+  if (loading) return <Preloader />
+  
   return (
-    <Fragment>
-      <NoteList
-        data={notes}
-        loading={loading}
-        hasMore={data && data.noteFeed && data.noteFeed.hasNextPage}
-        onLoadMoreClick={handleLoadMoreClick}
-      />
-    </Fragment>
+    <NoteList
+      data={notes}
+      hasMore={data && data.noteFeed && data.noteFeed.hasNextPage}
+      onLoadMoreClick={handleLoadMoreClick}
+    />
   );
 };
 

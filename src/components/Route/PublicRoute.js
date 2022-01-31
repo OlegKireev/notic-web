@@ -5,7 +5,7 @@ import Preloader from "../Preloader";
 
 const PublicRoute = ({ component: Component, ...rest }) => {
   const { isLoggedIn, loading, error } = useAuth();
-  if (loading) return <Preloader loading={loading} />
+  if (loading) return <Preloader />
   if (error) return <p>{error.message}</p>
   return (
     <Route

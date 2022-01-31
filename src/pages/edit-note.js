@@ -36,16 +36,10 @@ const EditNote = ({match}) => {
   }, [data, userData])
 
   if (!isAccessAllowed) return <p>You don't have access to edit this note</p>
-
+  if (loading) return <Preloader />
+  if (error) return <p>Note not found.</p>
   return (
-    <Fragment>
-      {
-        <Preloader loading={loading}>
-          {error && <p>Note not found.</p>}
-          {data && <NoteForm content={data.note.content} action={editNote} />}
-        </Preloader>
-      }
-    </Fragment>
+    <NoteForm content={data.note.content} action={editNote} />
   );
 };
 

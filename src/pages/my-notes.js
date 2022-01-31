@@ -10,7 +10,7 @@ const MyNotes = () => {
   useEffect(() => {
     document.title = 'My Notes — Notic';
   });
-  if (loading) return <Preloader loading={loading}/>;
+  if (loading) return <Preloader />;
   if (error) return `Error! ${error.message}`;
   return (
     <NoteList data={data.me.notes} />

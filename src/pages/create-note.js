@@ -3,6 +3,7 @@ import React, { Fragment, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { CREATE_NOTE, GET_NOTE_FEED, GET_MY_NOTES } from '../api/note';
 import NoteForm from '../components/NoteForm';
+import Preloader from '../components/Preloader';
 
 const CreateNote = () => {
   const history = useHistory();
@@ -22,12 +23,10 @@ const CreateNote = () => {
     document.title = 'Create Note — Notic';
   });
   
+  if (loading) return <Preloader />
+  if (error) return <p>Error saving the note</p>
   return (
-    <Fragment>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error saving the note</p>}
-      <NoteForm action={data}/>
-    </Fragment>
+    <NoteForm action={data}/>
   );
 };
 

@@ -14,6 +14,10 @@ const Header = () => {
   const { isLoggedIn, handleLogOutClick } = useAuth();
   const { data: userData, loading } = useQuery(GET_ME);
 
+  if (!userData || !userData.me) {
+    return null;
+  } 
+
   return (
     <HeaderBar>
       <LogoLink to="/">

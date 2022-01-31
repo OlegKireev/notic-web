@@ -15,15 +15,10 @@ const Note = ({match}) => {
     }
   }, [error])
 
+  if (loading) return <Preloader />
+  if (error) return <p>Note not found.</p>
   return (
-    <Fragment>
-      {
-        <Preloader loading={loading}>
-          {error && <p>Note not found.</p>}
-          {data && <NoteComponent data={data.note} />}
-        </Preloader>
-      }
-    </Fragment>
+    <NoteComponent data={data.note} />
   );
 };
 

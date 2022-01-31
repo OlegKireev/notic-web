@@ -9,7 +9,7 @@ const Favorites = () => {
   useEffect(() => {
     document.title = 'Favorites — Notic';
   });
-  if (loading) return <Preloader loading={loading}/>
+  if (loading) return <Preloader />
   if (error) return <p>{error.message}</p>
   return (
     <NoteList data={data.me.favoriteNotes} />

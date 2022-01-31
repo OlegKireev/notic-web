@@ -33,7 +33,7 @@ const UserForm = ({
             />
           )
         })}
-        <Preloader loading={loading} />
+        {loading && <Preloader />}
         {error && <span>{error.message}</span>}
         <Button type='submit'>{submitText}</Button>
       </form>

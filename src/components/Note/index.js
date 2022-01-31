@@ -17,7 +17,7 @@ const Note = ({ data, ...props }) => {;
   const handleRemoveModalOpenerClick = () => setIsShowDeleteModal(true);
   const handleRemoveModalCloserClick = () => setIsShowDeleteModal(false);
 
-  if (loading) return <Preloader loading={loading}/>;
+  if (loading) return <Preloader />;
   if (error) return <p>{error.message}</p>;
   return (
     <Fragment>

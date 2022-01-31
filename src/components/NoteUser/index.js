@@ -13,7 +13,7 @@ const NoteUser = ({
  }) => {
   const { data, loading, error } = useQuery(GET_ME);
 
-  if (loading) return <Preloader loading={loading} />;
+  if (loading) return <Preloader />;
   if (error) return <p>{error.message}</p>;
   return (
     <Wrapper>
