@@ -1,7 +1,7 @@
 {
   "name": "notic-web",
-  "version": "1.0.0",
-  "description": "[WIP] Web code examples for JavaScript Everywhere by Adam Scott, published by O'Reilly Media",
+  "version": "0.1.0",
+  "description": "Note managment single page application",
   "main": "src/index.js",
   "scripts": {
     "start": "yarn dev",
@@ -15,15 +15,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/javascripteverywhere/web.git"
+    "url": "git+https://github.com/OlegKireev/notedly-web.git"
   },
-  "keywords": [],
-  "author": "Adam Scott <adam@jseverywhere.io>",
+  "keywords": [
+    "react",
+    "graphql",
+    "apollo",
+    "styled-components",
+    "web application"
+  ],
+  "author": "Oleg Kireev <flucky@mail.ru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/javascripteverywhere/web/issues"
+    "url": "https://github.com/OlegKireev/notedly-web/issues"
   },
-  "homepage": "https://github.com/javascripteverywhere/web#readme",
+  "homepage": "https://github.com/OlegKireev/notedly-web#readme",
   "dependencies": {
     "@apollo/client": "3.5.7",
     "@types/react": "^17.0.38",
@@ -38,13 +44,11 @@
     "styled-components": "5.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-react": "^7.16.7",
+    "@parcel/babel-preset-env": "^2.2.1",
     "@testing-library/cypress": "5.0.2",
-    "babel-core": "6.26.3",
     "babel-plugin-module-resolver": "^4.1.0",
-    "babel-plugin-styled-components": "2.0.2",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
     "cypress": "3.6.1",
     "eslint": "8.8.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -54,9 +58,7 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "graphql-request": "^1.8.2",
-    "parcel-bundler": "1.12.3",
-    "prettier": "1.19.1",
-    "prop-types": "^15.8.1",
+    "parcel": "^2.2.1",
     "test-data-bot": "0.8.0"
   }
 }
