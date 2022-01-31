@@ -21,7 +21,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
