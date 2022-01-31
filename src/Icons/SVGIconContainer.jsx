@@ -6,9 +6,11 @@ const propTypes = {
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
+  viewBox: PropTypes.string,
 };
 const defaultProps = {
   as: 'svg',
+  viewBox: '',
 };
 
 const SVGIconContainer = function SVGIconContainerComponent({

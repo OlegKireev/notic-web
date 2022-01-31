@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
+import PropTypes, {} from 'prop-types';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 import useAuth from '@/hooks/useAuth';
 import Preloader from '../Preloader';
 
 const propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
 };
 
 function PrivateRoute({ component: Component, ...rest }) {

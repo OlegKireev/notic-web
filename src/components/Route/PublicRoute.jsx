@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -5,7 +6,7 @@ import useAuth from '@/hooks/useAuth';
 import Preloader from '../Preloader';
 
 const propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
 };
 
 function PublicRoute({ component: Component, ...rest }) {

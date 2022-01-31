@@ -12,12 +12,13 @@ const propTypes = {
     email: PropTypes.string,
     password: PropTypes.string,
   }).isRequired,
-  controls: PropTypes.arrayOf({
+  controls: PropTypes.objectOf(PropTypes.shape({
     id: PropTypes.string,
     label: PropTypes.string,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
-  }).isRequired,
+    type: PropTypes.string,
+  })).isRequired,
   submitText: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.string,
