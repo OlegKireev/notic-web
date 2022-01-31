@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Button from '../Button/styled';
 import { Wrapper, Form, StyledTextarea } from './styled';
 
-const NoteForm = ({ 
+function NoteForm({
   content,
   action,
- }) => {
-  const [value, setValue] = useState({content: content || ''});
+}) {
+  const [value, setValue] = useState({ content: content || '' });
   const handleTextAreaChange = (e) => setValue({
     ...value,
     [e.target.name]: e.target.value,
@@ -17,13 +17,13 @@ const NoteForm = ({
       variables: {
         ...value,
       },
-    })
-  }
+    });
+  };
 
   return (
     <Wrapper>
       <Form onSubmit={handleFormSubmit}>
-        <StyledTextarea 
+        <StyledTextarea
           required
           type="text"
           name="content"
@@ -32,10 +32,10 @@ const NoteForm = ({
           value={value.content}
           onChange={handleTextAreaChange}
         />
-        <Button type='submit'>Save</Button>
+        <Button type="submit">Save</Button>
       </Form>
     </Wrapper>
-  )
-};
+  );
+}
 
 export default NoteForm;

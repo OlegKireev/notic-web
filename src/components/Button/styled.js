@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Button = styled.button`
   display: block;
@@ -11,20 +11,20 @@ const Button = styled.button`
 `;
 
 export const PrimaryButton = styled(Button)`
-  color: ${({kind}) => kind === 'text' ? '#0077cc' : '#ffffff'};
-  background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0077cc'};
+  color: ${({ kind }) => (kind === 'text' ? '#0077cc' : '#ffffff')};
+  background-color: ${({ kind }) => (kind === 'text' ? 'transparent' : '#0077cc')};
 
   :hover {
-    background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#0088dd'};
-    color: ${({kind}) => kind === 'text' ? '#0088dd' : 'ffffff'};
-    text-decoration: ${({kind}) => kind === 'text' ? 'underline' : 'none'};
+    background-color: ${({ kind }) => (kind === 'text' ? 'transparent' : '#0088dd')};
+    color: ${({ kind }) => (kind === 'text' ? '#0088dd' : 'ffffff')};
+    text-decoration: ${({ kind }) => (kind === 'text' ? 'underline' : 'none')};
   }
 
   :active {
-    background-color: ${({kind}) => kind === 'text' ? 'transparent' : '#005fa3'};
-    color: ${({kind}) => kind === 'text' ? '#005fa3' : 'ffffff'};
+    background-color: ${({ kind }) => (kind === 'text' ? 'transparent' : '#005fa3')};
+    color: ${({ kind }) => (kind === 'text' ? '#005fa3' : 'ffffff')};
   }
-`
+`;
 
 export const ButtonGhost = styled(Button)`
   display: flex;

@@ -4,9 +4,11 @@ import { GET_NOTE_FEED } from '@/api/note';
 import NoteList from '../components/NoteList';
 import Preloader from '../components/Preloader';
 
-const Home = () => {
+function Home() {
   const [notes, setNotes] = useState([]);
-  const { data, loading, error, fetchMore } = useQuery(GET_NOTE_FEED, {
+  const {
+    data, loading, error, fetchMore,
+  } = useQuery(GET_NOTE_FEED, {
     fetchPolicy: 'network-only',
   });
 
@@ -35,13 +37,13 @@ const Home = () => {
             ...fetchMoreResult.noteFeed.notes,
           ],
           __typename: 'noteFeed',
-        }
-      })
-    })
+        },
+      }),
+    });
   };
 
-  if (loading) return <Preloader />
-  
+  if (loading) return <Preloader />;
+  if (error) return <p>{error.message}</p>;
   return (
     <NoteList
       data={notes}
@@ -49,6 +51,6 @@ const Home = () => {
       onLoadMoreClick={handleLoadMoreClick}
     />
   );
-};
+}
 
 export default Home;

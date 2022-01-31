@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const GET_NOTE_FEED = gql`
   query noteFeed($cursor: String) {
@@ -10,13 +10,13 @@ export const GET_NOTE_FEED = gql`
       createdAt
       content
       favoriteCount
-			author {
+      author {
         id
         username
         avatar
       }
     }
-	} 
+  } 
 }
 `;
 

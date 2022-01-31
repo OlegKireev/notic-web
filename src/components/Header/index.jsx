@@ -1,22 +1,24 @@
-import React, { forwardRef } from 'react';
-import logo from '@/assets/img/logo.svg';
-import { HeaderBar, Logo, LogoLink, ProfileWrapper } from './styled';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import logo from '@/assets/img/logo.svg';
+import {
+  HeaderBar, Logo, LogoLink, ProfileWrapper,
+} from './styled';
 import Button from '../Button';
 import useAuth from '@/hooks/useAuth';
-import { useQuery } from '@apollo/client';
 import { GET_ME } from '@/api/user';
 import ProfileLink from '../ProfileLink';
 import Preloader from '../Preloader';
 import IconLogout from '@/Icons/Logout';
 
-const Header = () => {
+function Header() {
   const { isLoggedIn, handleLogOutClick } = useAuth();
   const { data: userData, loading } = useQuery(GET_ME);
 
   if (!userData || !userData.me) {
     return null;
-  } 
+  }
 
   return (
     <HeaderBar>
@@ -25,19 +27,18 @@ const Header = () => {
       </LogoLink>
       <div>
         {isLoggedIn
-          ? ( 
-              <ProfileWrapper>
-                {loading
-                  ? <Preloader />
-                  : <ProfileLink data={userData.me} /> 
-                }
-                <Button 
-                  kind="ghost"
-                  onClick={handleLogOutClick}
-                >
-                  <IconLogout />
-                </Button>
-              </ProfileWrapper>
+          ? (
+            <ProfileWrapper>
+              {loading
+                ? <Preloader />
+                : <ProfileLink data={userData.me} />}
+              <Button
+                kind="ghost"
+                onClick={handleLogOutClick}
+              >
+                <IconLogout />
+              </Button>
+            </ProfileWrapper>
           )
           : (
             <div>
@@ -48,7 +49,7 @@ const Header = () => {
           )}
       </div>
     </HeaderBar>
-  )
-};
+  );
+}
 
 export default Header;

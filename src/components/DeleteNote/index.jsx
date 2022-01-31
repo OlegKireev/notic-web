@@ -4,21 +4,21 @@ import { useHistory } from 'react-router-dom';
 import { DELETE_NOTE, GET_MY_NOTES } from '../../api/note';
 import Button from '../Button';
 
-const DeleteNote = ({ id }) => {
+function DeleteNote({ id }) {
   const history = useHistory();
 
   const [deleteNote] = useMutation(DELETE_NOTE, {
     variables: {
-      id
+      id,
     },
-    refetchQueries: [{ query: GET_MY_NOTES}],
+    refetchQueries: [{ query: GET_MY_NOTES }],
     onCompleted: () => {
       // Перенаправляем пользователя на страницу "my notes"
       history.push('/my-notes');
-    }
+    },
   });
 
-  return <Button kind='danger' onClick={deleteNote}>Delete Note</Button>;
-};
+  return <Button kind="danger" onClick={deleteNote}>Delete Note</Button>;
+}
 
 export default DeleteNote;

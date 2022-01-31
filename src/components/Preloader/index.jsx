@@ -38,8 +38,7 @@ const Preloader = function Preloader({
         <div />
       </StyledPreloader>
     </Wrapper>
-  )
-;
+  );
 };
 
 Preloader.propTypes = propTypes;

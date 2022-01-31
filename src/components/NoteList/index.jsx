@@ -1,14 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Wrapper, Note, LoadMoreButton } from './styled';
 import MasonryLayout from '../MasonryLayout';
-import { useHistory } from 'react-router-dom';
 
-const NoteList = ({ data, hasMore, onLoadMoreClick }) => {
+function NoteList({ data, hasMore, onLoadMoreClick }) {
   const history = useHistory();
 
   const handleNoteClick = (id) => (e) => {
     const interactiveTags = ['A', 'BUTTON'];
-    if (interactiveTags.includes(e.target.tagName)) { return }
+    if (interactiveTags.includes(e.target.tagName)) { return; }
     history.push(`/note/${id}`);
   };
 
@@ -21,7 +21,7 @@ const NoteList = ({ data, hasMore, onLoadMoreClick }) => {
         : (
           <MasonryLayout>
             {data.map((note) => (
-              <Note 
+              <Note
                 key={note.id}
                 data={note}
                 tabIndex="0"
@@ -30,11 +30,10 @@ const NoteList = ({ data, hasMore, onLoadMoreClick }) => {
               />
             ))}
           </MasonryLayout>
-        )
-      }
+        )}
       {hasMore && <LoadMoreButton onClick={() => onLoadMoreClick()}>Load more...</LoadMoreButton>}
     </Wrapper>
-  )
+  );
 }
 
 export default NoteList;

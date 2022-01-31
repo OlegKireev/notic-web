@@ -3,15 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './home';
 import MyNotes from './my-notes';
 import Favorites from './favorites';
-import Note from './note'
-import SignUp from './sign-up'
+import Note from './note';
+import SignUp from './sign-up';
 import Layout from '@/components/Layout';
 import SignIn from './sign-in';
 import { PublicRoute, PrivateRoute } from '@/components/Route/';
 import CreateNote from './create-note';
 import EditNote from './edit-note';
 
-const Pages = () => {
+function Pages() {
   return (
     <Router>
       <Switch>
@@ -27,7 +27,7 @@ const Pages = () => {
         </Layout>
       </Switch>
     </Router>
-  )
+  );
 }
 
 export default Pages;

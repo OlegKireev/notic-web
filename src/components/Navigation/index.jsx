@@ -4,9 +4,9 @@ import pathnames from '@/constants/pathnames';
 import { NavList } from './styled';
 import useAuth from '@/hooks/useAuth';
 
-const Navigation = () => {
+function Navigation() {
   const { isLoggedIn } = useAuth();
-  const links = !isLoggedIn 
+  const links = !isLoggedIn
     ? pathnames.filter((pathname) => pathname.private === false)
     : pathnames;
 
@@ -20,7 +20,7 @@ const Navigation = () => {
         ))}
       </NavList>
     </nav>
-  )
+  );
 }
 
 export default Navigation;

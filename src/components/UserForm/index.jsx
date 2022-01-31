@@ -3,7 +3,7 @@ import Button from '../Button';
 import Preloader from '../Preloader';
 import { Wrapper, Input } from './styled';
 
-const UserForm = ({
+function UserForm({
   children,
   data,
   controls,
@@ -12,13 +12,15 @@ const UserForm = ({
   error,
   onInputsChange,
   onSubmit,
-}) => {
+}) {
   return (
     <Wrapper>
       <h3>{children}</h3>
       <form onSubmit={onSubmit}>
         {Object.keys(controls).map((key) => {
-          const {id, type, label, placeholder, required} = controls[key];
+          const {
+            id, type, label, placeholder, required,
+          } = controls[key];
           return (
             <Input
               key={id}
@@ -31,14 +33,14 @@ const UserForm = ({
               value={data[id]}
               onChange={onInputsChange}
             />
-          )
+          );
         })}
         {loading && <Preloader />}
         {error && <span>{error.message}</span>}
-        <Button type='submit'>{submitText}</Button>
+        <Button type="submit">{submitText}</Button>
       </form>
     </Wrapper>
-  )
-};
+  );
+}
 
 export default UserForm;

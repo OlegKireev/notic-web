@@ -1,16 +1,16 @@
 import React from 'react';
+import { ApolloProvider } from '@apollo/client';
 import Pages from './pages';
 import GlobalStyle from './theme/GlobalStyle';
-import { ApolloProvider } from '@apollo/client';
 import apolloClient from './api';
 
-const App = () => {
+function App() {
   return (
     <ApolloProvider client={apolloClient}>
       <GlobalStyle />
       <Pages />
     </ApolloProvider>
-  )
-};
+  );
+}
 
 export default App;

@@ -8,7 +8,7 @@ const useAuth = () => {
   const client = useApolloClient();
 
   const { data, loading, error } = useQuery(IS_LOGGED_IN);
-  const { isLoggedIn } = data; 
+  const { isLoggedIn } = data;
 
   const handleLogOutClick = () => {
     // Удаляем токен
@@ -24,7 +24,7 @@ const useAuth = () => {
     loading,
     error,
     handleLogOutClick,
-  }
+  };
 };
 
 export default useAuth;

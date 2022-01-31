@@ -4,8 +4,8 @@ import { GET_MY_NOTES } from '@/api/note';
 import NoteList from '../components/NoteList';
 import Preloader from '../components/Preloader';
 
-const MyNotes = () => {
-  const { data, loading, error } = useQuery(GET_MY_NOTES)
+function MyNotes() {
+  const { data, loading, error } = useQuery(GET_MY_NOTES);
 
   useEffect(() => {
     document.title = 'My Notes — Notic';
@@ -15,6 +15,6 @@ const MyNotes = () => {
   return (
     <NoteList data={data.me.notes} />
   );
-};
+}
 
 export default MyNotes;

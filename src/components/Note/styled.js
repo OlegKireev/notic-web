@@ -10,7 +10,7 @@ export const Wrapper = styled.article`
     display: block;
     overflow-x: scroll;
   }
-`
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -19,7 +19,7 @@ export const Header = styled.header`
 
 export const Author = styled.div`
   display: flex;
-`
+`;
 
 export const Avatar = styled.img`
   max-width: 1.5rem;
@@ -27,7 +27,7 @@ export const Avatar = styled.img`
   margin-right: .5em;
   object-fit: cover;
   border-radius: 50%;
-`
+`;
 
 export const CreatedTime = styled.time`
   font-size: .75em;
@@ -37,16 +37,16 @@ export const CreatedTime = styled.time`
 export const MetaInfo = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export const ModalParagraph = styled.p`
   margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
-`
+`;
 
 export const ModalControls = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: .5em;
-`
+`;

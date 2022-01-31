@@ -17,9 +17,9 @@ export const Note = styled(NoteComponent)`
     background-color: var(--color-catskill-white);
     border-color: var(--color-fontain-blue);
   }
-`
+`;
 
 export const LoadMoreButton = styled(Button)`
   width: 100%;
   margin-top: 1em;
-`
+`;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { widths } from "@/constants/breakpoints";
+import styled from 'styled-components';
+import { widths } from '@/constants/breakpoints';
 
 export const NavList = styled.ul`
   margin: 0;

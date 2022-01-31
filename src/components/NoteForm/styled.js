@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   height: 100%;
 `;
+
 export const StyledTextarea = styled(Textarea)`
   margin-bottom: .5em;
 `;

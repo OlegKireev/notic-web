@@ -11,14 +11,14 @@ const useLogin = () => {
       localStorage.setItem('token', data.signIn);
       isLoggedInVar(true);
       history.push('/');
-    }
+    },
   });
 
   return {
     signIn,
     loading,
-    error
-  }
+    error,
+  };
 };
 
 export default useLogin;

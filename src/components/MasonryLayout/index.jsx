@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   columns: PropTypes.number,
-  row: PropTypes.number,
+  gap: PropTypes.number,
   children: PropTypes.node,
 };
 const defaultProps = {
@@ -12,11 +12,11 @@ const defaultProps = {
   children: null,
 };
 
-const MasonryLayout = ({
+function MasonryLayout({
   columns,
   gap,
   children,
-}) => {
+}) {
   const columnWrapper = {};
   const result = [];
   for (let i = 0; i < columns; i++) {
@@ -25,9 +25,9 @@ const MasonryLayout = ({
   for (let i = 0; i < children.length; i++) {
     const columnIndex = i % columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div style={{ marginBottom: `${gap}px`}} key={i}>
+      <div style={{ marginBottom: `${gap}px` }} key={i}>
         {children[i]}
-      </div>
+      </div>,
     );
   }
   for (let i = 0; i < columns; i++) {
@@ -40,15 +40,15 @@ const MasonryLayout = ({
         key={i}
       >
         {columnWrapper[`column${i}`]}
-      </div>
+      </div>,
     );
   }
   return (
     <div style={{ display: 'flex' }}>
       {result}
-      </div>
-  )
-};
+    </div>
+  );
+}
 
 MasonryLayout.propTypes = propTypes;
 MasonryLayout.defaultProps = defaultProps;

@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import Header from '../Header';
 import Navigation from '../Navigation';
-import { Container, Wrapper, Aside, Main } from './styled';
+import {
+  Container, Wrapper, Aside, Main,
+} from './styled';
 
-const Layout = ({
-  children
-}) => {
+function Layout({
+  children,
+}) {
   return (
     <Container>
       <Header />
@@ -18,7 +20,7 @@ const Layout = ({
         </Main>
       </Wrapper>
     </Container>
-  )
+  );
 }
 
 export default Layout;

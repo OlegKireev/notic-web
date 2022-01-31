@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { widths } from "@/constants/breakpoints";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { widths } from '@/constants/breakpoints';
 
 export const HeaderBar = styled.header`
   width: 100%;
@@ -29,4 +29,4 @@ export const ProfileWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: .5em;
-`
+`;

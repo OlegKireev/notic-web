@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import UserForm from '@/components/UserForm';
-import { SIGNUP_USER } from '@/api/auth';
+import React, { useEffect, useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
+import UserForm from '@/components/UserForm';
+import { SIGNUP_USER } from '@/api/auth';
 import { isLoggedInVar } from '../api/cache';
 
 const signUpControls = {
@@ -23,18 +23,14 @@ const signUpControls = {
     label: 'Password:',
     required: true,
     type: 'password',
-  }
+  },
 };
 
-const createFormEmptyState = (controls) => {
-  return Object
+const createFormEmptyState = (controls) => Object
   .keys(controls)
-  .reduce((acc, key) => {
-    return { ...acc, [key]: ''};
-  }, {});
-};
+  .reduce((acc, key) => ({ ...acc, [key]: '' }), {});
 
-const SignUp = () => {
+function SignUp() {
   const history = useHistory();
 
   const [formData, setFormData] = useState(createFormEmptyState(signUpControls));
@@ -45,7 +41,7 @@ const SignUp = () => {
       // Обновляем локальный кэш Apollo
       isLoggedInVar(true);
       history.push('/');
-    }
+    },
   });
 
   useEffect(() => {
@@ -56,30 +52,30 @@ const SignUp = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
   const handleFormSubmit = (e) => {
     e.preventDefault();
     signUp({
       variables: {
         ...formData,
-      }
-    })
+      },
+    });
   };
 
   return (
-    <Fragment>
-      <UserForm 
-        data={formData}
-        controls={signUpControls}
-        loading={loading}
-        error={error}
-        submitText="Register"
-        onInputsChange={handleFormInputChange}
-        onSubmit={handleFormSubmit}  
-      >Sign Up:</UserForm>
-    </Fragment>
+    <UserForm
+      data={formData}
+      controls={signUpControls}
+      loading={loading}
+      error={error}
+      submitText="Register"
+      onInputsChange={handleFormInputChange}
+      onSubmit={handleFormSubmit}
+    >
+      Sign Up:
+    </UserForm>
   );
-};
+}
 
 export default SignUp;

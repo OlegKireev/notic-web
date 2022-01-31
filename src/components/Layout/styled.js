@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { widths } from "@/constants/breakpoints";
+import styled from 'styled-components';
+import { widths } from '@/constants/breakpoints';
 
 export const Container = styled.div`
     height: 100%;
