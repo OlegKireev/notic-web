@@ -16,10 +16,6 @@ function Header() {
   const { isLoggedIn, handleLogOutClick } = useAuth();
   const { data: userData, loading } = useQuery(GET_ME);
 
-  if (!userData || !userData.me) {
-    return null;
-  }
-
   return (
     <HeaderBar>
       <LogoLink to="/">
@@ -29,9 +25,9 @@ function Header() {
         {isLoggedIn
           ? (
             <ProfileWrapper>
-              {loading
+              {loading && !userData
                 ? <Preloader />
-                : <ProfileLink data={userData.me} />}
+                : <ProfileLink data={userData?.me || {}} />}
               <Button
                 kind="ghost"
                 onClick={handleLogOutClick}
