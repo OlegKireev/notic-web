@@ -67,6 +67,7 @@ typings/
 dist
 .cache
 .parcel-cache
+parcel-bundle-reports
 
 # cypress videos & screenshots
 cypress/videos
