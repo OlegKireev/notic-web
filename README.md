@@ -1,5 +1,9 @@
 # Notic Frontent App
 Frontend app created with React for managing a notes app.
+
+## Deployed app
+You could show a final app version [here](https://notic.netlify.app/)
+
 ## Technologies Stack:
 
 - [React](https://reactjs.org/) - JS render library 
